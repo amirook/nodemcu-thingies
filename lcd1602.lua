@@ -69,12 +69,12 @@ do
   local run = function(row, s, _delay, timer, callback)
     _delay = _delay or 40
     tmr.stop(timer)
-    local i = 16
+    local i = 20
     local runner = function()
       -- TODO: optimize calculus?
       put(
           locate(row, i >= 0 and i or 0),
-          (i >= 0 and s:sub(1, 16 - i) or s:sub(1 - i, 16 - i)),
+          (i >= 0 and s:sub(1, 20 - i) or s:sub(1 - i, 20 - i)),
           " "
         )
       if i == -#s then
@@ -82,7 +82,7 @@ do
           tmr.stop(timer)
           callback()
         else
-          i = 16
+          i = 20
         end
       else
         i = i - 1
